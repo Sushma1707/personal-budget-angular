@@ -149,23 +149,24 @@
       createChart();
 
 
+      let newDataSource = []; // ✅ Add this at the top of the file
 
       function getBudget() {
-        axios.get("http://localhost:3000/budget").then(function (res) {
-        //   console.log(res.data.myBudget);
-          for (var i = 0; i < res.data.myBudget.length; i++) {
+    axios.get("http://localhost:3000/budget").then(function (res) {
+        for (var i = 0; i < res.data.myBudget.length; i++) {
             dataSource.datasets[0].data[i] = res.data.myBudget[i].budget;
             dataSource.labels[i] = res.data.myBudget[i].title;
 
             newDataSource.push({
-              "title": res.data.myBudget[i].title,
-              "budget": res.data.myBudget[i].budget,
+                "title": res.data.myBudget[i].title,
+                "budget": res.data.myBudget[i].budget
             });
-          }
-          createChart();
-          
-        });
-      }
+        }
+        createChart();
+        change(newDataSource);
+    });
+}
+
 
       getBudget();
     </script>
