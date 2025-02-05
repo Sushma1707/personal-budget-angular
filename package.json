@@ -4,12 +4,12 @@
   "description": "The path to NGInx main folder: /usr/share/nginx/html",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
+  
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Sushma1707/personal-budget.git"
+    "url": "git+https://github.com/Sushma1707/personal-budget.git"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +20,6 @@
   "homepage": "https://github.com/Sushma1707/personal-budget#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1" 
   }
 }

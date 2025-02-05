@@ -85,7 +85,7 @@
 
         <article>
           <h1>Free</h1>
-          <p>This app is free!!! And you are the only one holding your data!</p>
+          <p><canvas id="myChart" width="400" height="400"></canvas></p>
         </article>
 
         <article>
@@ -121,80 +121,24 @@
       var dataSource = {
         datasets: [
           {
-            data: [],
+            data: [30, 350, 90],
             backgroundColor: [
               "#ffcd56",
               "#ff6384",
               "#36a2eb",
               "#fd6b19",
-              "#83FF33",
-              "#F633FF",
-              "#FF3333",
+             
             ],
           },
         ],
-        labels: [],
+        labels: [
+          'Eat Out',
+          'Rent',
+          'Groceries'
+        ],
       };
 
-      var newDataSource = [];
-
-      var svg = d3.select("#pie-chart").append("svg").append("g");
-
-      svg.append("g").attr("class", "slices");
-      svg.append("g").attr("class", "labels");
-      svg.append("g").attr("class", "lines");
-
-      var width = 650,
-        height = 300,
-        radius = Math.min(width, height) / 2;
-
-      var pie = d3.layout
-        .pie()
-        .sort(null)
-        .value(function (d) {
-          return d.budget;
-        });
-
-      var arc = d3.svg
-        .arc()
-        .outerRadius(radius * 0.8)
-        .innerRadius(radius * 0.4);
-
-      var outerArc = d3.svg
-        .arc()
-        .innerRadius(radius * 0.9)
-        .outerRadius(radius * 0.9);
-
-      svg.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
-
-      var key = function (d) {
-        return d.data.title;
-      };
-
-      var titles = []
-      var getTitles = ()=>{
-        axios.get("http://localhost:3000/budget").then(function (res) {
-            for(var i=0;i<res.data.myBudget.length;i++){
-                titles.push(res.data.myBudget[i].title)
-            }
-        })
-      }
-      getTitles();
-
-      var color = d3.scale
-        .ordinal()
-        .domain(titles)
-        .range([
-          "#ffcd56",
-          "#ff6384",
-          "#36a2eb",
-          "#fd6b19",
-          "#83FF33",
-          "#F633FF",
-          "#FF3333",
-          "#a38080"
-        ]);
-
+    
         function createChart() {
         var ctx = document.getElementById("myChart").getContext("2d");
         var myPieChart = new Chart(ctx, {
@@ -202,6 +146,9 @@
           data: dataSource,
         });
       }
+      createChart();
+
+  
 
 
 
@@ -318,7 +265,7 @@
             });
           }
           createChart();
-          change(newDataSource);
+          
         });
       }
 
