@@ -1,0 +1,19 @@
+<nav class="menu">
+    <ul>
+      <!-- This is an A11y Change -->
+      <li><a [routerLink]="['/']" role="link" aria-label="Homepage">Homepage</a></li>
+      <li>
+        <a [routerLink]="['/about']" role="link" aria-label="AboutPage">About</a>
+      </li>
+      <li>
+        <a [routerLink]="['/login']" role="link" aria-label="LoginPage">Login</a>
+      </li>
+      <li>
+        <a [routerLink]="['/contact']" role="link" aria-label="LoginPage">Contact</a>
+      </li>
+    </ul>
+  
+    <a href="https://google.com" role="link">
+      <img src="../../assets/user.webp" alt="Profile Picture" class="image" />
+    </a>
+  </nav>
