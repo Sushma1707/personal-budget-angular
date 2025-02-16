@@ -18,8 +18,27 @@
   },
   "homepage": "https://github.com/Sushma1707/personal-budget#readme",
   "dependencies": {
+    "@angular/core": "^19.1.6",
+    "@angular/router": "^19.1.6",
+    "chart.js": "^4.4.7",
     "cors": "^2.8.5",
     "d3": "^7.9.0",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^19.1.7",
+    "@angular/compiler-cli": "^19.1.6",
+    "@angular/platform-server": "^19.1.6",
+    "@angular/ssr": "^19.1.7",
+    "@types/chart.js": "^2.9.41",
+    "@types/d3": "^7.4.3",
+    "@types/jasmine": "^5.1.6",
+    "@types/node": "^22.13.4",
+    "karma": "^6.4.4",
+    "karma-chrome-launcher": "^3.2.0",
+    "karma-jasmine": "^5.1.0",
+    "karma-jasmine-html-reporter": "^2.1.0",
+    "typescript": "^5.7.3",
+    "zone.js": "^0.15.0"
   }
 }

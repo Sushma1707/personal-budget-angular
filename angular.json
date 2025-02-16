@@ -106,5 +106,11 @@
   },
   "cli": {
     "analytics": "b9662b4d-bd35-44ef-946d-5602e96d9a6f"
+    "serve": {
+  "options": {
+    "port": 5501
+  }
+}
+
   }
 }
